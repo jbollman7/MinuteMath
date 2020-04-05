@@ -5,34 +5,44 @@
              x:Class="MinuteMath.Pages.GamePlay">
     <ContentPage.Content>
         <Grid>
-            
             <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
+                
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
+                
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Label Grid.Column="0" Grid.ColumnSpan="3"
-                   Grid.Row="1"
-                   Text="Math expressiondddddsadfasdfasdfasdfasdf"/>
 
-           <Button Grid.Row="2" Grid.Column="0" Text="4" Margin="10,10"
-                Command="{Binding SaveCommand}" BackgroundColor="Tan"/>
-            <Button Grid.Row="2" Grid.Column="1" Text="5" Margin="10,10"
-                    Command="{Binding SaveCommand}" BackgroundColor="Tan"/>
-            <Button Grid.Row="2" Grid.Column="2" Text="6" Margin="10,10"
-                    Command="{Binding SaveCommand}" BackgroundColor="Tan"/>
-            <Button Grid.Row="3" Grid.Column="0" Text="8" Margin="10,10"
-                    Command="{Binding SaveCommand}" BackgroundColor="Tan"/>
-            <Button Grid.Row="3" Grid.Column="1" Text="9" Margin="10,10"
-                    Command="{Binding SaveCommand}" BackgroundColor="Tan"/>
-            <Button Grid.Row="3" Grid.Column="2" Text="10" Margin="10,10"
-                    Command="{Binding SaveCommand}" BackgroundColor="Tan"/>
+            <Label
+                Grid.Column="0"
+                Grid.Row="1" Margin="1,10"
+                Text="Timer"
+            />
+            <Label Grid.Column="1" Grid.ColumnSpan="2"
+                   Grid.Row="2"
+                   Text="39 / 15"
+                   FontSize="Large"
+                   />
+
+           <Button Grid.Row="3" Grid.Column="0" Text="4" 
+                Command="{Binding SaveCommand}" BackgroundColor="red"/>
+            <Button Grid.Row="3" Grid.Column="1" Text="5" 
+                    Command="{Binding SaveCommand}" BackgroundColor="Orange"/>
+            <Button Grid.Row="3" Grid.Column="2" Text="6" 
+                    Command="{Binding SaveCommand}" BackgroundColor="Yellow"/>
+            <Button Grid.Row="4" Grid.Column="0" Text="8" 
+                    Command="{Binding SaveCommand}" BackgroundColor="Green"/>
+            <Button Grid.Row="4" Grid.Column="1" Text="9" 
+                    Command="{Binding SaveCommand}" BackgroundColor="Blue"/>
+            <Button Grid.Row="4" Grid.Column="2" Text="10" 
+                    Command="{Binding SaveCommand}" BackgroundColor="Indigo"/>
 
         </Grid>
     </ContentPage.Content>
