@@ -32,17 +32,17 @@
                    />
 
            <Button Grid.Row="3" Grid.Column="0" Text="4" 
-                Command="{Binding SaveCommand}" BackgroundColor="red"/>
+                Command="{Binding RedCommand}" BackgroundColor="Red"/>
             <Button Grid.Row="3" Grid.Column="1" Text="5" 
-                    Command="{Binding SaveCommand}" BackgroundColor="Orange"/>
+                    Command="{Binding OrangeCommand}" BackgroundColor="Orange"/>
             <Button Grid.Row="3" Grid.Column="2" Text="6" 
-                    Command="{Binding SaveCommand}" BackgroundColor="Yellow"/>
+                    Command="{Binding YellowCommand}" BackgroundColor="Yellow"/>
             <Button Grid.Row="4" Grid.Column="0" Text="8" 
-                    Command="{Binding SaveCommand}" BackgroundColor="Green"/>
+                    Command="{Binding GreenCommand}" BackgroundColor="Green"/>
             <Button Grid.Row="4" Grid.Column="1" Text="9" 
-                    Command="{Binding SaveCommand}" BackgroundColor="Blue"/>
+                    Command="{Binding BlueCommand}" BackgroundColor="Blue"/>
             <Button Grid.Row="4" Grid.Column="2" Text="10" 
-                    Command="{Binding SaveCommand}" BackgroundColor="Indigo"/>
+                    Command="{Binding IndigoCommand}" BackgroundColor="Indigo"/>
 
         </Grid>
     </ContentPage.Content>

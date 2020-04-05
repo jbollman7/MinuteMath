@@ -11,7 +11,7 @@ namespace MinuteMath
         {
             InitializeComponent();
 
-            MainPage = new GamePlay();
+            MainPage = new StartPage();
         }
 
         protected override void OnStart()

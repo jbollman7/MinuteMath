@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MinuteMath.Pages.StartPage">
+   <StackLayout BackgroundColor="Violet">
+       <Label Text="Welcome to Minute Math!" FontSize="36" VerticalOptions="CenterAndExpand" TextColor="Yellow"/>
+       <Image Source="startlogo" BackgroundColor="Violet"/>
+       <Button Text="Start" FontSize="64" TextColor="Yellow" HorizontalOptions="CenterAndExpand"/>
+   </StackLayout>
+</ContentPage>
