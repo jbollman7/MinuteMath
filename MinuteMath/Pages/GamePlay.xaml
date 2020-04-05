@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MinuteMath.Pages.GamePlay">
+    <ContentPage.Content>
+        <Grid>
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Grid.ColumnSpan="3"
+                   Grid.Row="1"
+                   Text="Math expressiondddddsadfasdfasdfasdfasdf"/>
+
+           <Button Grid.Row="2" Grid.Column="0" Text="4" Margin="10,10"
+                Command="{Binding SaveCommand}" BackgroundColor="Tan"/>
+            <Button Grid.Row="2" Grid.Column="1" Text="5" Margin="10,10"
+                    Command="{Binding SaveCommand}" BackgroundColor="Tan"/>
+            <Button Grid.Row="2" Grid.Column="2" Text="6" Margin="10,10"
+                    Command="{Binding SaveCommand}" BackgroundColor="Tan"/>
+            <Button Grid.Row="3" Grid.Column="0" Text="8" Margin="10,10"
+                    Command="{Binding SaveCommand}" BackgroundColor="Tan"/>
+            <Button Grid.Row="3" Grid.Column="1" Text="9" Margin="10,10"
+                    Command="{Binding SaveCommand}" BackgroundColor="Tan"/>
+            <Button Grid.Row="3" Grid.Column="2" Text="10" Margin="10,10"
+                    Command="{Binding SaveCommand}" BackgroundColor="Tan"/>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
