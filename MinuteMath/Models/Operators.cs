@@ -3,8 +3,6 @@ using System.Collections.Generic;
 
 namespace MinuteMath.Models
 {
-    namespace Calculator
-    {
         public enum OperatorsList
         {
             Addition,
@@ -143,4 +141,3 @@ namespace MinuteMath.Models
 
         }
     }
-}
