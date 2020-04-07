@@ -16,14 +16,19 @@ namespace MinuteMath.ViewModels
 
        public GameLogicViewModel()
         {
+            this.operators = new Operators();
+            
             GetNumbers();
+
             RedChoice = shuffledUpChoices[0];
             OrangeChoice = shuffledUpChoices[1];
             YellowChoice = shuffledUpChoices[2];
             GreenChoice =  shuffledUpChoices[3];
             BlueChoice =   shuffledUpChoices[4];
             IndigoChoice = shuffledUpChoices[5];
-            
+            OperandX = operators.OperandX;
+            OperandY = operators.OperandY;
+            OperatorSymbol = operators.OperatorSymbol;
 
             /*
             RedCommand = new Command(() =>
@@ -36,19 +41,51 @@ namespace MinuteMath.ViewModels
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public string expression;
+        public int operandX;
 
-        
-        public void Expression()
+        public int OperandX
         {
-             //Console.WriteLine($"{this.operators.OperandX} {op}")
+            get { return operandX; }
+            set
+            {
+                operandX = value;
+                var args = new PropertyChangedEventArgs(nameof(OperandX));
+                PropertyChanged?.Invoke(this,args);
+            }
         }
         
+        public int operandY;
+
+        public int OperandY
+        {
+            get { return operandY; }
+            set
+            {
+                operandY = value;
+                var args = new PropertyChangedEventArgs(nameof(OperandY));
+                PropertyChanged?.Invoke(this,args);
+            }
+        }
+
+        public string operatorSymbol;
+
+        public string OperatorSymbol
+        {
+            get { return operatorSymbol; }
+            set
+            {
+                operatorSymbol = value;
+                var args = new PropertyChangedEventArgs(nameof(OperatorSymbol));
+                PropertyChanged?.Invoke(this,args);
+            }
+        }
+
         public void GetNumbers()
         {
-            this.operators = new Operators();
+            
             operators.GetOperands();
             this.shuffledUpChoices = operators.Shuffle(operators.ChoiceGenerator());
+            operators.ConvertOperatorToSymbol();
         }
 
         /*
@@ -137,7 +174,7 @@ namespace MinuteMath.ViewModels
             get { return indigoChoice; }
             set
             {
-                redChoice = value;
+                indigoChoice = value;
                 var args = new PropertyChangedEventArgs(nameof(IndigoChoice));
                 PropertyChanged?.Invoke(this, args);
             }
