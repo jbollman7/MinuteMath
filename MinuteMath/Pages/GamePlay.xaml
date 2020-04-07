@@ -38,32 +38,28 @@
                 Text="Score:"
                 />
 
-            <Label Padding="10">
-                <Label.FormattedText>
-                    <FormattedString>
-                        <Span Text="Lorem ipsum" />
-                        <Span Text="dolor sit amet." />
-                    </FormattedString>
-                </Label.FormattedText>
-            </Label>
-          <!-->
+            
             <Label Grid.Column="0"
-                   Padding="2"
+                 HorizontalTextAlignment="End"
                    Grid.Row="2"
                    Text="{Binding OperandX}"
                    FontSize="36"
                    />
-            <Label Grid.Column="1" Grid.ColumnSpan="1"
+            <Label Grid.Column="1"
+                   HorizontalTextAlignment="Center"
                    Grid.Row="2"
                    Text="{Binding OperatorSymbol}"
                    FontSize="36"
             />
-            <Label Grid.Column="2" Grid.ColumnSpan="1"
+            <Label Grid.Column="2"
+                   HorizontalTextAlignment="Start"
+                  
                    Grid.Row="2"
                    Text="{Binding OperandY}"
                    FontSize="36"
             />
-           <!-->
+           
+
            <Button Grid.Row="3" Grid.Column="0" Text="{Binding RedChoice}" 
                    FontSize="23"
                    BackgroundColor="Red"/>
