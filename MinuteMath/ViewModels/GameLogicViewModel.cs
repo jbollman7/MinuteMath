@@ -12,6 +12,7 @@ namespace MinuteMath.ViewModels
 
         Operators operators;
         List<int> shuffledUpChoices;
+       
 
        public GameLogicViewModel()
         {
@@ -22,7 +23,7 @@ namespace MinuteMath.ViewModels
             GreenChoice =  shuffledUpChoices[3];
             BlueChoice =   shuffledUpChoices[4];
             IndigoChoice = shuffledUpChoices[5];
-
+            
 
             /*
             RedCommand = new Command(() =>
@@ -37,12 +38,12 @@ namespace MinuteMath.ViewModels
 
         public string expression;
 
-        /*
-        public string Expression
+        
+        public void Expression()
         {
-
+             //Console.WriteLine($"{this.operators.OperandX} {op}")
         }
-        */
+        
         public void GetNumbers()
         {
             this.operators = new Operators();
@@ -65,6 +66,9 @@ namespace MinuteMath.ViewModels
             }
         }
         */
+        
+
+
         public int redChoice;
 
         public int RedChoice

@@ -19,6 +19,7 @@ namespace MinuteMath.Models
             public int OperandX { get; private set; }
             public int OperandY { get; private set; }
             public OperatorsList Operator { get; private set; }
+            public string OperatorSymbol { get; private set; }
             public int ExpressionSolution { get; private set; }
 
 
@@ -140,6 +141,30 @@ namespace MinuteMath.Models
                 }
                 return list;
             }
+            
+            public string ConvertOperatorToSymbol()
+            {
+                switch (Operator)
+                {
+                    case OperatorsList.Addition:
+                        return OperatorSymbol = "+";
+                    
+                    case OperatorsList.Subtraction:
+                        return OperatorSymbol = "-";
+                    
+                    case OperatorsList.Multiplication:
+                        return OperatorSymbol = "*";
+                    
+                    case OperatorsList.Division:
+                        return OperatorSymbol = "/";
+                    
+
+                    default:
+                        return OperatorSymbol = "Error, could not convert Operator enum to symbol";
+                }
+            }
+            
+           
 
         }
     }

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinuteMath.iOS", "MinuteMat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinuteMath", "MinuteMath\MinuteMath.csproj", "{A5F94CD3-AAE5-48F8-90D6-1DF61BF5509D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatorTests", "..\MathBlaster\CalculatorTests\CalculatorTests.csproj", "{3E693855-593D-4FD1-8905-4B72D4EBE3F2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,5 +55,17 @@ Global
 		{A5F94CD3-AAE5-48F8-90D6-1DF61BF5509D}.Debug|iPhone.Build.0 = Debug|Any CPU
 		{A5F94CD3-AAE5-48F8-90D6-1DF61BF5509D}.Release|iPhone.ActiveCfg = Release|Any CPU
 		{A5F94CD3-AAE5-48F8-90D6-1DF61BF5509D}.Release|iPhone.Build.0 = Release|Any CPU
+		{3E693855-593D-4FD1-8905-4B72D4EBE3F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E693855-593D-4FD1-8905-4B72D4EBE3F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E693855-593D-4FD1-8905-4B72D4EBE3F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E693855-593D-4FD1-8905-4B72D4EBE3F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E693855-593D-4FD1-8905-4B72D4EBE3F2}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{3E693855-593D-4FD1-8905-4B72D4EBE3F2}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{3E693855-593D-4FD1-8905-4B72D4EBE3F2}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{3E693855-593D-4FD1-8905-4B72D4EBE3F2}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{3E693855-593D-4FD1-8905-4B72D4EBE3F2}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{3E693855-593D-4FD1-8905-4B72D4EBE3F2}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{3E693855-593D-4FD1-8905-4B72D4EBE3F2}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{3E693855-593D-4FD1-8905-4B72D4EBE3F2}.Release|iPhone.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
