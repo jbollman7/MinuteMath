@@ -8,7 +8,8 @@
         <local:StartPageViewModel/>
     </ContentPage.BindingContext>
    <StackLayout BackgroundColor="Violet">
-       <Label Text="Welcome to Minute Math!" FontSize="36" VerticalOptions="CenterAndExpand" TextColor="Yellow"/>
+       <Label Text="Welcome to Minute Math!" FontSize="36" VerticalOptions="CenterAndExpand" TextColor="Yellow"
+              HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
        <Image Source="startlogo" BackgroundColor="Violet"/>
        <Button Text="Start" FontSize="64" TextColor="Yellow" HorizontalOptions="CenterAndExpand"
                Command="{Binding LaunchGamePlayCommand}"/>

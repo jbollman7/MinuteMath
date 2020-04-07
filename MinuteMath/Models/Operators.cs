@@ -22,6 +22,8 @@ namespace MinuteMath.Models
             public int ExpressionSolution { get; private set; }
 
 
+
+
             public OperatorsList GetOperator()
             {
                 var values = Enum.GetValues(typeof(OperatorsList));
@@ -35,7 +37,7 @@ namespace MinuteMath.Models
             {
                 var operatorSelection = GetOperator();
 
-                switch (operatorSelection)
+            switch (operatorSelection)
                 {
                     case OperatorsList.Addition:
                         AdditionOperandRange();

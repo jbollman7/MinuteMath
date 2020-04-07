@@ -2,7 +2,14 @@
 
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MinuteMath.ViewModels"
              x:Class="MinuteMath.Pages.GamePlay">
+
+    <ContentPage.BindingContext>
+        <local:GameLogicViewModel/>
+    </ContentPage.BindingContext>
+
+
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
@@ -23,25 +30,35 @@
             <Label
                 Grid.Column="0"
                 Grid.Row="1" Margin="1,10"
-                Text="Timer"
+                Text="Timer:"
             />
+            <Label
+                Grid.Column="2"
+                Grid.Row="1"
+                Text="Score:"
+                />
             <Label Grid.Column="1" Grid.ColumnSpan="2"
                    Grid.Row="2"
-                   Text="39 / 15"
+                   Text="{Binding Expression}"
                    FontSize="Large"
                    />
 
-           <Button Grid.Row="3" Grid.Column="0" Text="4" 
-                Command="{Binding RedCommand}" BackgroundColor="Red"/>
-            <Button Grid.Row="3" Grid.Column="1" Text="5" 
+           <Button Grid.Row="3" Grid.Column="0" Text="{Binding RedChoice}" 
+                 BackgroundColor="Red"/>
+
+            <Button Grid.Row="3" Grid.Column="1" Text="{Binding OrangeChoice}" 
                     Command="{Binding OrangeCommand}" BackgroundColor="Orange"/>
-            <Button Grid.Row="3" Grid.Column="2" Text="6" 
+
+            <Button Grid.Row="3" Grid.Column="2" Text="{Binding YellowChoice}" 
                     Command="{Binding YellowCommand}" BackgroundColor="Yellow"/>
-            <Button Grid.Row="4" Grid.Column="0" Text="8" 
+
+            <Button Grid.Row="4" Grid.Column="0" Text="{Binding GreenChoice}" 
                     Command="{Binding GreenCommand}" BackgroundColor="Green"/>
-            <Button Grid.Row="4" Grid.Column="1" Text="9" 
+
+            <Button Grid.Row="4" Grid.Column="1" Text="{Binding BlueChoice}" 
                     Command="{Binding BlueCommand}" BackgroundColor="Blue"/>
-            <Button Grid.Row="4" Grid.Column="2" Text="10" 
+
+            <Button Grid.Row="4" Grid.Column="2" Text="{Binding IndigoChoice}" 
                     Command="{Binding IndigoCommand}" BackgroundColor="Indigo"/>
 
         </Grid>
