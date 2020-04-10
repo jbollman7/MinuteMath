@@ -35,9 +35,6 @@ namespace MinuteMath.ViewModels
                 }
                    
             });
-
-            var args = new PropertyChangedEventArgs(nameof(GameLogicViewModel));
-            PropertyChanged?.Invoke(this, args);
         }
 
         private void initialize()
