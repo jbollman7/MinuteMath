@@ -29,12 +29,12 @@
 
             <Label
                 Grid.Column="0"
-                Grid.Row="1" Margin="1,10"
+                Grid.Row="1" HorizontalTextAlignment="Start"
                 Text="Timer:"
             />
             <Label
                 Grid.Column="2"
-                Grid.Row="1"
+                Grid.Row="1" HorizontalTextAlignment="Center"
                 Text="Score:"
                 />
 
