@@ -3,6 +3,8 @@ using MinuteMath.Models;
 using System.Collections.Generic;
 using Xamarin.Forms;
 using System.Windows.Input;
+using System.Diagnostics;
+using System;
 
 namespace MinuteMath.ViewModels
 {
@@ -11,8 +13,11 @@ namespace MinuteMath.ViewModels
 
         Operators operators;
         List<int> shuffledUpChoices;
+        Stopwatch gameStopWatch;
+        string sGameTimer;
+        int gameTimer = 59;
+        string timer;
 
-        
         public GameLogicViewModel()
         {
             this.operators = new Operators();
@@ -53,7 +58,8 @@ namespace MinuteMath.ViewModels
             IndigoChoice = shuffledUpChoices[5];
             OperandX = operators.OperandX;
             OperandY = operators.OperandY;
-            OperatorSymbol = operators.OperatorSymbol;  
+            OperatorSymbol = operators.OperatorSymbol;
+            GameTimer();
         }
 
        public void EvaluateUserChoice(string choice)
@@ -142,7 +148,30 @@ namespace MinuteMath.ViewModels
 
         public void GameTimer()
         {
-
+            gameStopWatch = new Stopwatch();
+            gameStopWatch.Start();
+            Device.StartTimer(TimeSpan.FromSeconds(0), () =>
+            {
+                sGameTimer = (gameTimer - gameStopWatch.Elapsed.Seconds).ToString();
+                Timer = sGameTimer;
+                //Timer = sixtyStopWatch.Elapsed.Seconds.ToString();
+                if (gameTimer - gameStopWatch.Elapsed.Seconds > 0)
+                    return true;
+                else
+                    return false;
+            });
+            
+        }
+        public string Timer
+        {
+            // get => timer;
+            get { return sGameTimer; }
+            set
+            {
+                timer = value;
+                var args = new PropertyChangedEventArgs(nameof(Timer));
+                PropertyChanged?.Invoke(this, args);
+            }
         }
 
         public int score;
