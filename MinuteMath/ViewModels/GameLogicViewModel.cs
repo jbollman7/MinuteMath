@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using MinuteMath.Models;
 using System.Collections.Generic;
 using Xamarin.Forms;
+using System.Windows.Input;
 
 namespace MinuteMath.ViewModels
 {
@@ -12,30 +13,48 @@ namespace MinuteMath.ViewModels
 
         Operators operators;
         List<int> shuffledUpChoices;
-       
 
-       public GameLogicViewModel()
+
+        public GameLogicViewModel()
         {
             this.operators = new Operators();
-            
-            GetNumbers();
 
+            GetNumbers();
+            Score = 0;
             RedChoice = shuffledUpChoices[0];
             OrangeChoice = shuffledUpChoices[1];
             YellowChoice = shuffledUpChoices[2];
-            GreenChoice =  shuffledUpChoices[3];
-            BlueChoice =   shuffledUpChoices[4];
+            GreenChoice = shuffledUpChoices[3];
+            BlueChoice = shuffledUpChoices[4];
             IndigoChoice = shuffledUpChoices[5];
             OperandX = operators.OperandX;
             OperandY = operators.OperandY;
             OperatorSymbol = operators.OperatorSymbol;
 
-            /*
+
             RedCommand = new Command(() =>
             {
-
+                Score += 1;
             });
-            */
+           
+
+        }
+
+
+        public Command RedCommand { get;  }
+
+
+        public int score;
+        public int Score
+        {
+            get { return score; }
+            set
+            {
+                score = value;
+                var args = new PropertyChangedEventArgs(nameof(Score));
+                PropertyChanged?.Invoke(this, args);
+
+            } 
         }
 
 

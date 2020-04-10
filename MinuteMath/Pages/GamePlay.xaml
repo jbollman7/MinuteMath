@@ -35,7 +35,7 @@
             <Label
                 Grid.Column="2"
                 Grid.Row="1" HorizontalTextAlignment="Center"
-                Text="Score:"
+                Text="{Binding Score} "
                 />
 
             
@@ -62,7 +62,7 @@
 
            <Button Grid.Row="3" Grid.Column="0" Text="{Binding RedChoice}" 
                    FontSize="23"
-                   BackgroundColor="Red"/>
+                   Command="{Binding RedCommand}"   BackgroundColor="Red"/>
 
             <Button Grid.Row="3" Grid.Column="1" Text="{Binding OrangeChoice}"
                     FontSize="24"
