@@ -17,10 +17,13 @@ namespace MinuteMath.ViewModels
         {
             this.operators = new Operators();
             initialize();
-           
+
+
+            CalculateCommand = new Command<string>(EvaluateUserChoice);
 
             // calculate Command, pass in command parameter to see what button was selected. less repeated code logic.
-            RedCommand = new Command(() =>
+            /*
+            CalculateCommand = new Command(() =>
             {
                 if (RedChoice == operators.ExpressionSolution)
                 {
@@ -35,6 +38,7 @@ namespace MinuteMath.ViewModels
                 }
                    
             });
+            */
         }
 
         private void initialize()
@@ -49,14 +53,91 @@ namespace MinuteMath.ViewModels
             IndigoChoice = shuffledUpChoices[5];
             OperandX = operators.OperandX;
             OperandY = operators.OperandY;
-            OperatorSymbol = operators.OperatorSymbol;
-
-           
+            OperatorSymbol = operators.OperatorSymbol;  
         }
 
-       
+       public void EvaluateUserChoice(string choice)
+        {
+            switch (choice)
+            {
+                case "Red":
+                    if (RedChoice == operators.ExpressionSolution)
+                    {
+                        Score += 1;
+                        initialize();
+                        break;
+                    }
+                    else
+                    {
+                        Score -= 1;
+                        break;
+                    }
+                case "Orange":
+                    if (OrangeChoice == operators.ExpressionSolution)
+                    {
+                        Score += 1;
+                        initialize();
+                        break;
+                    }
+                    else
+                    {
+                        Score -= 1;
+                        break;
+                    }
+                case "Yellow":
+                    if (YellowChoice == operators.ExpressionSolution)
+                    {
+                        Score += 1;
+                        initialize();
+                        break;
+                    }
+                    else
+                    {
+                        Score -= 1;
+                        break;
+                    }
+                case "Green":
+                    if (GreenChoice == operators.ExpressionSolution)
+                    {
+                        Score += 1;
+                        initialize();
+                        break;
+                    }
+                    else
+                    {
+                        Score -= 1;
+                        break;
+                    }
+                case "Blue":
+                    if (BlueChoice == operators.ExpressionSolution)
+                    {
+                        Score += 1;
+                        initialize();
+                        break;
+                    }
+                    else
+                    {
+                        Score -= 1;
+                        break;
+                    }
+                case "Indigo":
+                    if (IndigoChoice == operators.ExpressionSolution)
+                    {
+                        Score += 1;
+                        initialize();
+                        break;
+                    }
+                    else
+                    {
+                        Score -= 1;
+                        break;
+                    }
 
-        public Command RedCommand { get;  }
+            }
+
+        }
+
+        public Command CalculateCommand { get;  }
 
 
         public int score;
