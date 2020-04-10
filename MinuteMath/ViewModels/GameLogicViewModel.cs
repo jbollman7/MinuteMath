@@ -22,6 +22,8 @@ namespace MinuteMath.ViewModels
         {
             this.operators = new Operators();
             initialize();
+            gameStopWatch = new Stopwatch();
+            gameStopWatch.Start();
 
 
             CalculateCommand = new Command<string>(EvaluateUserChoice);
@@ -148,8 +150,7 @@ namespace MinuteMath.ViewModels
 
         public void GameTimer()
         {
-            gameStopWatch = new Stopwatch();
-            gameStopWatch.Start();
+            
             Device.StartTimer(TimeSpan.FromSeconds(0), () =>
             {
                 sGameTimer = (gameTimer - gameStopWatch.Elapsed.Seconds).ToString();
