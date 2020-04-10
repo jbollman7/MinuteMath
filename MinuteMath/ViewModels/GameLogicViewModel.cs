@@ -1,6 +1,4 @@
-﻿using System;
-using System.ComponentModel;
-using System.Collections.ObjectModel;
+﻿using System.ComponentModel;
 using MinuteMath.Models;
 using System.Collections.Generic;
 using Xamarin.Forms;
@@ -14,13 +12,38 @@ namespace MinuteMath.ViewModels
         Operators operators;
         List<int> shuffledUpChoices;
 
-
+        
         public GameLogicViewModel()
         {
             this.operators = new Operators();
+            initialize();
+           
 
+            // calculate Command, pass in command parameter to see what button was selected. less repeated code logic.
+            RedCommand = new Command(() =>
+            {
+                if (RedChoice == operators.ExpressionSolution)
+                {
+                    Score += 1;
+                    initialize();
+                }
+                   
+                else
+                {
+                    Score -= 1;
+                    initialize();
+                }
+                   
+            });
+
+            var args = new PropertyChangedEventArgs(nameof(GameLogicViewModel));
+            PropertyChanged?.Invoke(this, args);
+        }
+
+        private void initialize()
+        {
             GetNumbers();
-            Score = 0;
+
             RedChoice = shuffledUpChoices[0];
             OrangeChoice = shuffledUpChoices[1];
             YellowChoice = shuffledUpChoices[2];
@@ -31,15 +54,10 @@ namespace MinuteMath.ViewModels
             OperandY = operators.OperandY;
             OperatorSymbol = operators.OperatorSymbol;
 
-
-            RedCommand = new Command(() =>
-            {
-                Score += 1;
-            });
            
-
         }
 
+       
 
         public Command RedCommand { get;  }
 
