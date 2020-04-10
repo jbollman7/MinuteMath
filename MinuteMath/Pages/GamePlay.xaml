@@ -35,7 +35,7 @@
             <Label
                 Grid.Column="2"
                 Grid.Row="1" HorizontalTextAlignment="Center"
-                Text="Score:"
+                Text="{Binding Score} "
                 />
 
             
@@ -62,27 +62,27 @@
 
            <Button Grid.Row="3" Grid.Column="0" Text="{Binding RedChoice}" 
                    FontSize="23"
-                   BackgroundColor="Red"/>
+                   Command="{Binding CalculateCommand}" CommandParameter="Red"  BackgroundColor="Red"/>
 
             <Button Grid.Row="3" Grid.Column="1" Text="{Binding OrangeChoice}"
                     FontSize="24"
-                    Command="{Binding OrangeCommand}" BackgroundColor="Orange"/>
+                    Command="{Binding CalculateCommand}" CommandParameter="Orange" BackgroundColor="Orange"/>
 
             <Button Grid.Row="3" Grid.Column="2" Text="{Binding YellowChoice}"
                     FontSize="24"
-                    Command="{Binding YellowCommand}" BackgroundColor="Yellow"/>
+                    Command="{Binding CalculateCommand}" CommandParameter="Yellow" BackgroundColor="Yellow"/>
 
             <Button Grid.Row="4" Grid.Column="0" Text="{Binding GreenChoice}"
                     FontSize="24"
-                    Command="{Binding GreenCommand}" BackgroundColor="Green"/>
+                    Command="{Binding CalculateCommand}" CommandParameter="Green" BackgroundColor="Green"/>
 
             <Button Grid.Row="4" Grid.Column="1" Text="{Binding BlueChoice}"
                     FontSize="24"
-                    Command="{Binding BlueCommand}" BackgroundColor="Blue"/>
+                    Command="{Binding CalculateCommand}" CommandParameter="Blue" BackgroundColor="Blue"/>
 
             <Button Grid.Row="4" Grid.Column="2" Text="{Binding IndigoChoice}"
                     FontSize="24"
-                    Command="{Binding IndigoCommand}" BackgroundColor="Indigo"/>
+                    Command="{Binding CalculateCommand}" CommandParameter="Indigo" BackgroundColor="Indigo"/>
 
         </Grid>
     </ContentPage.Content>

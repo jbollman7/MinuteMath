@@ -1,9 +1,8 @@
-﻿using System;
-using System.ComponentModel;
-using System.Collections.ObjectModel;
+﻿using System.ComponentModel;
 using MinuteMath.Models;
 using System.Collections.Generic;
 using Xamarin.Forms;
+using System.Windows.Input;
 
 namespace MinuteMath.ViewModels
 {
@@ -12,30 +11,151 @@ namespace MinuteMath.ViewModels
 
         Operators operators;
         List<int> shuffledUpChoices;
-       
 
-       public GameLogicViewModel()
+        
+        public GameLogicViewModel()
         {
             this.operators = new Operators();
-            
+            initialize();
+
+
+            CalculateCommand = new Command<string>(EvaluateUserChoice);
+
+            // calculate Command, pass in command parameter to see what button was selected. less repeated code logic.
+            /*
+            CalculateCommand = new Command(() =>
+            {
+                if (RedChoice == operators.ExpressionSolution)
+                {
+                    Score += 1;
+                    initialize();
+                }
+                   
+                else
+                {
+                    Score -= 1;
+                    initialize();
+                }
+                   
+            });
+            */
+        }
+
+        private void initialize()
+        {
             GetNumbers();
 
             RedChoice = shuffledUpChoices[0];
             OrangeChoice = shuffledUpChoices[1];
             YellowChoice = shuffledUpChoices[2];
-            GreenChoice =  shuffledUpChoices[3];
-            BlueChoice =   shuffledUpChoices[4];
+            GreenChoice = shuffledUpChoices[3];
+            BlueChoice = shuffledUpChoices[4];
             IndigoChoice = shuffledUpChoices[5];
             OperandX = operators.OperandX;
             OperandY = operators.OperandY;
-            OperatorSymbol = operators.OperatorSymbol;
+            OperatorSymbol = operators.OperatorSymbol;  
+        }
 
-            /*
-            RedCommand = new Command(() =>
+       public void EvaluateUserChoice(string choice)
+        {
+            switch (choice)
             {
+                case "Red":
+                    if (RedChoice == operators.ExpressionSolution)
+                    {
+                        Score += 1;
+                        initialize();
+                        break;
+                    }
+                    else
+                    {
+                        Score -= 1;
+                        break;
+                    }
+                case "Orange":
+                    if (OrangeChoice == operators.ExpressionSolution)
+                    {
+                        Score += 1;
+                        initialize();
+                        break;
+                    }
+                    else
+                    {
+                        Score -= 1;
+                        break;
+                    }
+                case "Yellow":
+                    if (YellowChoice == operators.ExpressionSolution)
+                    {
+                        Score += 1;
+                        initialize();
+                        break;
+                    }
+                    else
+                    {
+                        Score -= 1;
+                        break;
+                    }
+                case "Green":
+                    if (GreenChoice == operators.ExpressionSolution)
+                    {
+                        Score += 1;
+                        initialize();
+                        break;
+                    }
+                    else
+                    {
+                        Score -= 1;
+                        break;
+                    }
+                case "Blue":
+                    if (BlueChoice == operators.ExpressionSolution)
+                    {
+                        Score += 1;
+                        initialize();
+                        break;
+                    }
+                    else
+                    {
+                        Score -= 1;
+                        break;
+                    }
+                case "Indigo":
+                    if (IndigoChoice == operators.ExpressionSolution)
+                    {
+                        Score += 1;
+                        initialize();
+                        break;
+                    }
+                    else
+                    {
+                        Score -= 1;
+                        break;
+                    }
 
-            });
-            */
+            }
+
+        }
+
+        public Command CalculateCommand { get;  }
+
+
+        public void GameTimer()
+        {
+
+        }
+
+        public int score;
+        public int Score
+        {
+            get { return score; }
+            set
+            {
+                score = value;
+                var args = new PropertyChangedEventArgs(nameof(Score));
+                PropertyChanged?.Invoke(this, args);
+
+            } 
         }
 
 
