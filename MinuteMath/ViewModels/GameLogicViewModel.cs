@@ -140,6 +140,11 @@ namespace MinuteMath.ViewModels
         public Command CalculateCommand { get;  }
 
 
+        public void GameTimer()
+        {
+
+        }
+
         public int score;
         public int Score
         {
