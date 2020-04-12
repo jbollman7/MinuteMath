@@ -30,7 +30,7 @@
             <Label
                 Grid.Column="0"
                 Grid.Row="1" HorizontalTextAlignment="Start"
-                Text="Timer:"
+                Text="{Binding Timer}"
             />
             <Label
                 Grid.Column="2"
