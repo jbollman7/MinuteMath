@@ -6,6 +6,7 @@ using Xamarin.Essentials;
 using System.Windows.Input;
 using System.Diagnostics;
 using System;
+using MinuteMath.Pages;
 
 namespace MinuteMath.ViewModels
 {
@@ -141,10 +142,16 @@ namespace MinuteMath.ViewModels
                 Timer = sGameTimer;
                 //Timer = sixtyStopWatch.Elapsed.Seconds.ToString();
                 if (gameTimer - gameStopWatch.Elapsed.Seconds > 0)
+                {
                     return true;
+                }
                 else
+                {
+                    App.Current.MainPage = new NavigationPage(new EndPage());
                     return false;
                     // Code for end screen
+                }
+
             });
             
         }
