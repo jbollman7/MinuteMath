@@ -9,28 +9,15 @@
     </ContentPage.BindingContext>
 
     <ContentPage.Content>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="20"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
+        <StackLayout>
+     
             
             <Label Text="Game Over" 
                    TextColor="Crimson"
-                   FontSize="Large"
-                   Grid.Row="2"
-                   Grid.Column="0"
-                   Grid.ColumnSpan="2"/>
-        </Grid>
+                   FontSize="48"
+                   HorizontalOptions="CenterAndExpand"
+            />
+            <Label Text="hello {Binding HighScore}"/>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

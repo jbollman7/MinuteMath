@@ -30,17 +30,16 @@
             <Label
                 Grid.Column="0"
                 Grid.Row="1" HorizontalTextAlignment="Start"
-                Text="{Binding Timer}"
+                Text="{Binding Timer, StringFormat='Timer:  {0:N}'}"
+                FontSize="24"
+
             />
             <Label
                 Grid.Column="2"
                 Grid.Row="1" HorizontalTextAlignment="Center"
-                Text="{Binding Score} "
+                Text="{Binding Score, StringFormat='Score:  {0}'}"
+                FontSize="24"
                 />
-            <Label
-                Grid.Column="1"
-                Grid.Row="1"
-                Text="{Binding HighScore}"/>
 
             
             <Label Grid.Column="0"
