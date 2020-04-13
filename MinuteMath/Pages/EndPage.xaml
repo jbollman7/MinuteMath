@@ -17,7 +17,9 @@
                    FontSize="48"
                    HorizontalOptions="CenterAndExpand"
             />
-            <Label Text="hello {Binding HighScore}"/>
+            <Label
+               Text="{Binding HighScore, StringFormat='Score:  {0}'}"
+                />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
