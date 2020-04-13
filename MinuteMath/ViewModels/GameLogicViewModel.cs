@@ -2,6 +2,7 @@
 using MinuteMath.Models;
 using System.Collections.Generic;
 using Xamarin.Forms;
+using Xamarin.Essentials;
 using System.Windows.Input;
 using System.Diagnostics;
 using System;
@@ -17,6 +18,7 @@ namespace MinuteMath.ViewModels
         string sGameTimer;
         int gameTimer = 59;
         string timer;
+        bool isHighScoreSet;
 
         public GameLogicViewModel()
         {
@@ -28,24 +30,6 @@ namespace MinuteMath.ViewModels
 
             CalculateCommand = new Command<string>(EvaluateUserChoice);
 
-            // calculate Command, pass in command parameter to see what button was selected. less repeated code logic.
-            /*
-            CalculateCommand = new Command(() =>
-            {
-                if (RedChoice == operators.ExpressionSolution)
-                {
-                    Score += 1;
-                    initialize();
-                }
-                   
-                else
-                {
-                    Score -= 1;
-                    initialize();
-                }
-                   
-            });
-            */
         }
 
         private void initialize()
@@ -160,6 +144,7 @@ namespace MinuteMath.ViewModels
                     return true;
                 else
                     return false;
+                    // Code for end screen
             });
             
         }
@@ -187,6 +172,20 @@ namespace MinuteMath.ViewModels
 
             } 
         }
+        public int HighScore
+        {
+            get => Preferences.Get(nameof(HighScore), 0);
+            set
+            {
+                if (HighScore > Score)
+                {
+                    Preferences.Set(nameof(HighScore), value);
+                    var args = new PropertyChangedEventArgs(nameof(Score));
+                    PropertyChanged?.Invoke(this, args);
+                }
+            }
+        }
+
 
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -330,7 +329,7 @@ namespace MinuteMath.ViewModels
             }
         }
 
-        //public Command RedCommand { get; }
+        
 
     }
 }
