@@ -37,6 +37,10 @@
                 Grid.Row="1" HorizontalTextAlignment="Center"
                 Text="{Binding Score} "
                 />
+            <Label
+                Grid.Column="1"
+                Grid.Row="1"
+                Text="{Binding HighScore}"/>
 
             
             <Label Grid.Column="0"
