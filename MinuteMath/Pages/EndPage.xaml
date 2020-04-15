@@ -5,7 +5,7 @@
              x:Class="MinuteMath.Pages.EndPage">
 
     <ContentPage.BindingContext>
-        <local:EndPageViewModel/>
+        <local:GameLogicViewModel/>
     </ContentPage.BindingContext>
 
     <ContentPage.Content>
@@ -18,7 +18,7 @@
                    HorizontalOptions="CenterAndExpand"
             />
             <Label
-               Text="{Binding HighScore, StringFormat='Score:  {0}'}"
+               Text="{Binding HighScore}"
                 />
         </StackLayout>
     </ContentPage.Content>

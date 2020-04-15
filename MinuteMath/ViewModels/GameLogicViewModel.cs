@@ -131,7 +131,7 @@ namespace MinuteMath.ViewModels
 
         public Command CalculateCommand { get;  }
 
-
+       
         public void GameTimer()
         {
             
@@ -146,6 +146,7 @@ namespace MinuteMath.ViewModels
                 }
                 else
                 {
+                    CompareScores();
                     App.Current.MainPage = new NavigationPage(new EndPage());
                     return false;
                     // Code for end screen
@@ -183,13 +184,15 @@ namespace MinuteMath.ViewModels
             get => Preferences.Get(nameof(HighScore), 0);
             set
             {
-                if (HighScore > Score)
-                {
-                    Preferences.Set(nameof(HighScore), value);
-                    var args = new PropertyChangedEventArgs(nameof(Score));
-                    PropertyChanged?.Invoke(this, args);
-                }
+                 Preferences.Set(nameof(HighScore), value);
+                 var args = new PropertyChangedEventArgs(nameof(Score));
+                 PropertyChanged?.Invoke(this, args);
             }
+        }
+        public void CompareScores()
+        {
+            if (Score > HighScore)
+                HighScore = Score;
         }
 
 
