@@ -14,12 +14,12 @@ namespace MinuteMath.ViewModels
     {
 
         Operators operators;
-        List<int> shuffledUpChoices;
+        List<int> _shuffledUpChoices;
         Stopwatch gameStopWatch;
-        string sGameTimer;
+        string _sGameTimer;
         int gameTimer = 59;
         string timer;
-        bool isHighScoreSet;
+        
 
         public GameLogicViewModel()
         {
@@ -37,12 +37,12 @@ namespace MinuteMath.ViewModels
         {
             GetNumbers();
 
-            RedChoice = shuffledUpChoices[0];
-            OrangeChoice = shuffledUpChoices[1];
-            YellowChoice = shuffledUpChoices[2];
-            GreenChoice = shuffledUpChoices[3];
-            BlueChoice = shuffledUpChoices[4];
-            IndigoChoice = shuffledUpChoices[5];
+            RedChoice = _shuffledUpChoices[0];
+            OrangeChoice = _shuffledUpChoices[1];
+            YellowChoice = _shuffledUpChoices[2];
+            GreenChoice = _shuffledUpChoices[3];
+            BlueChoice = _shuffledUpChoices[4];
+            IndigoChoice = _shuffledUpChoices[5];
             OperandX = operators.OperandX;
             OperandY = operators.OperandY;
             OperatorSymbol = operators.OperatorSymbol;
@@ -138,8 +138,8 @@ namespace MinuteMath.ViewModels
             
             Device.StartTimer(TimeSpan.FromSeconds(0), () =>
             {
-                sGameTimer = (gameTimer - gameStopWatch.Elapsed.Seconds).ToString();
-                Timer = sGameTimer;
+                _sGameTimer = (gameTimer - gameStopWatch.Elapsed.Seconds).ToString();
+                Timer = _sGameTimer;
                 //Timer = sixtyStopWatch.Elapsed.Seconds.ToString();
                 if (gameTimer - gameStopWatch.Elapsed.Seconds > 0)
                 {
@@ -158,7 +158,7 @@ namespace MinuteMath.ViewModels
         public string Timer
         {
             // get => timer;
-            get { return sGameTimer; }
+            get { return _sGameTimer; }
             set
             {
                 timer = value;
@@ -240,7 +240,7 @@ namespace MinuteMath.ViewModels
         {
             
             operators.GetOperands();
-            this.shuffledUpChoices = operators.Shuffle(operators.ChoiceGenerator());
+            this._shuffledUpChoices = operators.Shuffle(operators.ChoiceGenerator());
             operators.ConvertOperatorToSymbol();
         }
 
