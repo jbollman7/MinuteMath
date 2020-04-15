@@ -261,75 +261,75 @@ namespace MinuteMath.ViewModels
         
 
 
-        public int redChoice;
+        private int _redChoice;
 
         public int RedChoice
         {
-            get { return redChoice; }
+            get { return _redChoice; }
             set
             {
-                redChoice = value;
+                _redChoice = value;
                 var args = new PropertyChangedEventArgs(nameof(RedChoice));
                 PropertyChanged?.Invoke(this, args);
             }
         }
 
-        public int orangeChoice;
+        private int _orangeChoice;
 
         public int OrangeChoice
         {
-            get { return orangeChoice; }
+            get { return _orangeChoice; }
             set
             {
-                orangeChoice = value;
+                _orangeChoice = value;
                 var args = new PropertyChangedEventArgs(nameof(OrangeChoice));
                 PropertyChanged?.Invoke(this, args);
             }
         }
-        public int yellowChoice;
+        private int _yellowChoice;
 
         public int YellowChoice
         {
-            get { return yellowChoice; }
+            get { return _yellowChoice; }
             set
             {
-                yellowChoice = value;
+                _yellowChoice = value;
                 var args = new PropertyChangedEventArgs(nameof(YellowChoice));
                 PropertyChanged?.Invoke(this, args);
             }
         }
-        public int greenChoice;
+        private int _greenChoice;
 
         public int GreenChoice
         {
-            get { return greenChoice; }
+            get { return _greenChoice; }
             set
             {
-                greenChoice = value;
+                _greenChoice = value;
                 var args = new PropertyChangedEventArgs(nameof(GreenChoice));
                 PropertyChanged?.Invoke(this, args);
             }
         }
-        public int blueChoice;
+        private int _blueChoice;
 
         public int BlueChoice
         {
-            get { return blueChoice; }
+            get { return _blueChoice; }
             set
             {
-                blueChoice = value;
+                _blueChoice = value;
                 var args = new PropertyChangedEventArgs(nameof(BlueChoice));
                 PropertyChanged?.Invoke(this, args);
             }
         }
-        public int indigoChoice;
+        private int _indigoChoice;
 
         public int IndigoChoice
         {
-            get { return indigoChoice; }
+            get { return _indigoChoice; }
             set
             {
-                indigoChoice = value;
+                _indigoChoice = value;
                 var args = new PropertyChangedEventArgs(nameof(IndigoChoice));
                 PropertyChanged?.Invoke(this, args);
             }
