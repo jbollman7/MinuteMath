@@ -3,7 +3,6 @@ using MinuteMath.Models;
 using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Essentials;
-using System.Windows.Input;
 using System.Diagnostics;
 using System;
 using MinuteMath.Pages;

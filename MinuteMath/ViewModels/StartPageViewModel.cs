@@ -1,8 +1,4 @@
-﻿using System;
-using MinuteMath.Models;
-using System.ComponentModel;
-using System.Collections.ObjectModel;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using MinuteMath.Pages;
 using System.Windows.Input;
 

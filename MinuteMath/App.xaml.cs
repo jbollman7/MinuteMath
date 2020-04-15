@@ -1,7 +1,7 @@
-﻿using System;
+﻿
 using MinuteMath.Pages;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+
 
 namespace MinuteMath
 {
