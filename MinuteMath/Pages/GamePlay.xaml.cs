@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using MinuteMath.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,6 +15,7 @@ namespace MinuteMath.Pages
         public GamePlay()
         {
             InitializeComponent();
+            BindingContext = new GameLogicViewModel();
         }
     }
 }

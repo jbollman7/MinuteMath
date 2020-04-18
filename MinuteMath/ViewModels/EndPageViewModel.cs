@@ -5,20 +5,7 @@ namespace MinuteMath.ViewModels
 {
     public class EndPageViewModel : INotifyPropertyChanged
     {
-        
-        private readonly int _score;
-
-        public EndPageViewModel(int score)
-        {
-            this._score = score;
-        }
-
-        public void CompareScores()
-        {
-            if (_score > HighScore)
-                HighScore = _score;
-        }
-        
+                
         public int HighScore
         {
             get => Preferences.Get(nameof(HighScore), 0);
@@ -28,6 +15,10 @@ namespace MinuteMath.ViewModels
                 var args = new PropertyChangedEventArgs(nameof(HighScore));
                 PropertyChanged?.Invoke(this, args);
             }
+        }
+        public int Score
+        {
+            get => Preferences.Get(nameof(Score), 0);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

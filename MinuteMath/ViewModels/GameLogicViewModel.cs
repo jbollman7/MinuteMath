@@ -22,6 +22,7 @@ namespace MinuteMath.ViewModels
 
         public GameLogicViewModel()
         {
+            resetScore();
             this.operators = new Operators();
             initialize();
             gameStopWatch = new Stopwatch();
@@ -30,6 +31,13 @@ namespace MinuteMath.ViewModels
 
             CalculateCommand = new Command<string>(EvaluateUserChoice);
 
+        }
+
+        private void resetScore()
+        {
+            bool scoreKey = Preferences.ContainsKey(nameof(Score));
+            if (scoreKey)
+                Preferences.Remove(nameof(Score));
         }
 
         private void initialize()
@@ -170,10 +178,10 @@ namespace MinuteMath.ViewModels
         public int score;
         public int Score
         {
-            get { return score; }
+            get => Preferences.Get(nameof(Score), 0);
             set
             {
-                score = value;
+                Preferences.Set(nameof(Score), value);
                 var args = new PropertyChangedEventArgs(nameof(Score));
                 PropertyChanged?.Invoke(this, args);
 
@@ -185,7 +193,7 @@ namespace MinuteMath.ViewModels
             set
             {
                  Preferences.Set(nameof(HighScore), value);
-                 var args = new PropertyChangedEventArgs(nameof(Score));
+                 var args = new PropertyChangedEventArgs(nameof(HighScore));
                  PropertyChanged?.Invoke(this, args);
             }
         }
