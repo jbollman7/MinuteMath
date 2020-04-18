@@ -5,10 +5,6 @@
              xmlns:local="clr-namespace:MinuteMath.ViewModels"
              x:Class="MinuteMath.Pages.GamePlay">
 
-    <ContentPage.BindingContext>
-        <local:GameLogicViewModel/>
-    </ContentPage.BindingContext>
-
 
     <ContentPage.Content>
         <Grid>
