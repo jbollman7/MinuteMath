@@ -5,10 +5,6 @@
              xmlns:local="clr-namespace:MinuteMath.ViewModels"
              x:Class="MinuteMath.Pages.GamePlay">
 
-    <ContentPage.BindingContext>
-        <local:GameLogicViewModel/>
-    </ContentPage.BindingContext>
-
 
     <ContentPage.Content>
         <Grid>
@@ -30,12 +26,15 @@
             <Label
                 Grid.Column="0"
                 Grid.Row="1" HorizontalTextAlignment="Start"
-                Text="Timer:"
+                Text="{Binding Timer, StringFormat='Timer:  {0:N}'}"
+                FontSize="24"
+
             />
             <Label
                 Grid.Column="2"
                 Grid.Row="1" HorizontalTextAlignment="Center"
-                Text="{Binding Score} "
+                Text="{Binding Score, StringFormat='Score:  {0}'}"
+                FontSize="24"
                 />
 
             
@@ -61,27 +60,27 @@
            
 
            <Button Grid.Row="3" Grid.Column="0" Text="{Binding RedChoice}" 
-                   FontSize="23"
+                   FontSize="24" TextColor="White" FontAttributes="Bold"
                    Command="{Binding CalculateCommand}" CommandParameter="Red"  BackgroundColor="Red"/>
 
             <Button Grid.Row="3" Grid.Column="1" Text="{Binding OrangeChoice}"
-                    FontSize="24"
+                    FontSize="24" TextColor="White" FontAttributes="Bold"
                     Command="{Binding CalculateCommand}" CommandParameter="Orange" BackgroundColor="Orange"/>
 
             <Button Grid.Row="3" Grid.Column="2" Text="{Binding YellowChoice}"
-                    FontSize="24"
-                    Command="{Binding CalculateCommand}" CommandParameter="Yellow" BackgroundColor="Yellow"/>
+                    FontSize="24" TextColor="White" FontAttributes="Bold"
+                    Command="{Binding CalculateCommand}" CommandParameter="Yellow" BackgroundColor="Gold"/>
 
             <Button Grid.Row="4" Grid.Column="0" Text="{Binding GreenChoice}"
-                    FontSize="24"
+                    FontSize="24" TextColor="White" FontAttributes="Bold"
                     Command="{Binding CalculateCommand}" CommandParameter="Green" BackgroundColor="Green"/>
 
             <Button Grid.Row="4" Grid.Column="1" Text="{Binding BlueChoice}"
-                    FontSize="24"
+                    FontSize="24" TextColor="White" FontAttributes="Bold"
                     Command="{Binding CalculateCommand}" CommandParameter="Blue" BackgroundColor="Blue"/>
 
             <Button Grid.Row="4" Grid.Column="2" Text="{Binding IndigoChoice}"
-                    FontSize="24"
+                    FontSize="24" TextColor="White" FontAttributes="Bold"
                     Command="{Binding CalculateCommand}" CommandParameter="Indigo" BackgroundColor="Indigo"/>
 
         </Grid>
