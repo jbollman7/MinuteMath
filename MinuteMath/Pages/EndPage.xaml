@@ -9,22 +9,61 @@
     </ContentPage.BindingContext>
 
     <ContentPage.Content>
-        <StackLayout>
-     
+        <Grid>
+             <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                 <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label  Text="{Binding HighScore, StringFormat='HighScore:  {0}'}"
+                    FontSize="24"
+                    Grid.Row="1"
+                    Grid.Column="3"
+                    Grid.ColumnSpan="3"
+            />
             
             <Label Text="Game Over" 
                    TextColor="Crimson"
-                   FontSize="48"
+                   FontSize="36"
+                 
                    HorizontalOptions="CenterAndExpand"
+                   Grid.Row="2"
+                   Grid.RowSpan="2"
+                    Grid.ColumnSpan="2"
+                   Grid.Column="2"
             />
-            <Label  Text="{Binding HighScore, StringFormat='HighScore:  {0}'}"
-                    FontSize="24"
-            />
+
 
             <Label Text="{Binding Score, StringFormat='Score:  {0}'}"
-                FontSize="24"                  
+               FontSize="24"
+                    Grid.Row="5"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="3"              
             />
 
-        </StackLayout>
+            <Button Text="Play Again?"
+                    FontSize="24"
+                    VerticalOptions="Center"   
+                    Grid.Row="6"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="3"/>
+                    
+
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
