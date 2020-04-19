@@ -3,9 +3,9 @@ using MinuteMath.Models;
 using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Essentials;
-using System.Windows.Input;
 using System.Diagnostics;
 using System;
+using MinuteMath.Pages;
 
 namespace MinuteMath.ViewModels
 {
@@ -13,15 +13,16 @@ namespace MinuteMath.ViewModels
     {
 
         Operators operators;
-        List<int> shuffledUpChoices;
+        List<int> _shuffledUpChoices;
         Stopwatch gameStopWatch;
-        string sGameTimer;
+        string _sGameTimer;
         int gameTimer = 59;
         string timer;
-        bool isHighScoreSet;
+        
 
         public GameLogicViewModel()
         {
+            resetScore();
             this.operators = new Operators();
             initialize();
             gameStopWatch = new Stopwatch();
@@ -32,16 +33,23 @@ namespace MinuteMath.ViewModels
 
         }
 
+        private void resetScore()
+        {
+            bool scoreKey = Preferences.ContainsKey(nameof(Score));
+            if (scoreKey)
+                Preferences.Remove(nameof(Score));
+        }
+
         private void initialize()
         {
             GetNumbers();
 
-            RedChoice = shuffledUpChoices[0];
-            OrangeChoice = shuffledUpChoices[1];
-            YellowChoice = shuffledUpChoices[2];
-            GreenChoice = shuffledUpChoices[3];
-            BlueChoice = shuffledUpChoices[4];
-            IndigoChoice = shuffledUpChoices[5];
+            RedChoice = _shuffledUpChoices[0];
+            OrangeChoice = _shuffledUpChoices[1];
+            YellowChoice = _shuffledUpChoices[2];
+            GreenChoice = _shuffledUpChoices[3];
+            BlueChoice = _shuffledUpChoices[4];
+            IndigoChoice = _shuffledUpChoices[5];
             OperandX = operators.OperandX;
             OperandY = operators.OperandY;
             OperatorSymbol = operators.OperatorSymbol;
@@ -131,27 +139,34 @@ namespace MinuteMath.ViewModels
 
         public Command CalculateCommand { get;  }
 
-
+       
         public void GameTimer()
         {
             
             Device.StartTimer(TimeSpan.FromSeconds(0), () =>
             {
-                sGameTimer = (gameTimer - gameStopWatch.Elapsed.Seconds).ToString();
-                Timer = sGameTimer;
+                _sGameTimer = (gameTimer - gameStopWatch.Elapsed.Seconds).ToString();
+                Timer = _sGameTimer;
                 //Timer = sixtyStopWatch.Elapsed.Seconds.ToString();
                 if (gameTimer - gameStopWatch.Elapsed.Seconds > 0)
+                {
                     return true;
+                }
                 else
+                {
+                    CompareScores();
+                    App.Current.MainPage = new NavigationPage(new EndPage());
                     return false;
                     // Code for end screen
+                }
+
             });
             
         }
         public string Timer
         {
             // get => timer;
-            get { return sGameTimer; }
+            get { return _sGameTimer; }
             set
             {
                 timer = value;
@@ -163,10 +178,10 @@ namespace MinuteMath.ViewModels
         public int score;
         public int Score
         {
-            get { return score; }
+            get => Preferences.Get(nameof(Score), 0);
             set
             {
-                score = value;
+                Preferences.Set(nameof(Score), value);
                 var args = new PropertyChangedEventArgs(nameof(Score));
                 PropertyChanged?.Invoke(this, args);
 
@@ -177,13 +192,15 @@ namespace MinuteMath.ViewModels
             get => Preferences.Get(nameof(HighScore), 0);
             set
             {
-                if (HighScore > Score)
-                {
-                    Preferences.Set(nameof(HighScore), value);
-                    var args = new PropertyChangedEventArgs(nameof(Score));
-                    PropertyChanged?.Invoke(this, args);
-                }
+                 Preferences.Set(nameof(HighScore), value);
+                 var args = new PropertyChangedEventArgs(nameof(HighScore));
+                 PropertyChanged?.Invoke(this, args);
             }
+        }
+        public void CompareScores()
+        {
+            if (Score > HighScore)
+                HighScore = Score;
         }
 
 
@@ -233,7 +250,7 @@ namespace MinuteMath.ViewModels
         {
             
             operators.GetOperands();
-            this.shuffledUpChoices = operators.Shuffle(operators.ChoiceGenerator());
+            this._shuffledUpChoices = operators.Shuffle(operators.ChoiceGenerator());
             operators.ConvertOperatorToSymbol();
         }
 
@@ -255,75 +272,75 @@ namespace MinuteMath.ViewModels
         
 
 
-        public int redChoice;
+        private int _redChoice;
 
         public int RedChoice
         {
-            get { return redChoice; }
+            get { return _redChoice; }
             set
             {
-                redChoice = value;
+                _redChoice = value;
                 var args = new PropertyChangedEventArgs(nameof(RedChoice));
                 PropertyChanged?.Invoke(this, args);
             }
         }
 
-        public int orangeChoice;
+        private int _orangeChoice;
 
         public int OrangeChoice
         {
-            get { return orangeChoice; }
+            get { return _orangeChoice; }
             set
             {
-                orangeChoice = value;
+                _orangeChoice = value;
                 var args = new PropertyChangedEventArgs(nameof(OrangeChoice));
                 PropertyChanged?.Invoke(this, args);
             }
         }
-        public int yellowChoice;
+        private int _yellowChoice;
 
         public int YellowChoice
         {
-            get { return yellowChoice; }
+            get { return _yellowChoice; }
             set
             {
-                yellowChoice = value;
+                _yellowChoice = value;
                 var args = new PropertyChangedEventArgs(nameof(YellowChoice));
                 PropertyChanged?.Invoke(this, args);
             }
         }
-        public int greenChoice;
+        private int _greenChoice;
 
         public int GreenChoice
         {
-            get { return greenChoice; }
+            get { return _greenChoice; }
             set
             {
-                greenChoice = value;
+                _greenChoice = value;
                 var args = new PropertyChangedEventArgs(nameof(GreenChoice));
                 PropertyChanged?.Invoke(this, args);
             }
         }
-        public int blueChoice;
+        private int _blueChoice;
 
         public int BlueChoice
         {
-            get { return blueChoice; }
+            get { return _blueChoice; }
             set
             {
-                blueChoice = value;
+                _blueChoice = value;
                 var args = new PropertyChangedEventArgs(nameof(BlueChoice));
                 PropertyChanged?.Invoke(this, args);
             }
         }
-        public int indigoChoice;
+        private int _indigoChoice;
 
         public int IndigoChoice
         {
-            get { return indigoChoice; }
+            get { return _indigoChoice; }
             set
             {
-                indigoChoice = value;
+                _indigoChoice = value;
                 var args = new PropertyChangedEventArgs(nameof(IndigoChoice));
                 PropertyChanged?.Invoke(this, args);
             }

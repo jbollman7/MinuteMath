@@ -7,11 +7,12 @@
     <ContentPage.BindingContext>
         <local:StartPageViewModel/>
     </ContentPage.BindingContext>
-   <StackLayout BackgroundColor="Violet">
-       <Label Text="Welcome to Minute Math!" FontSize="36" VerticalOptions="CenterAndExpand" TextColor="Yellow"
+   <StackLayout BackgroundColor="{Binding ColorChoice}">
+       <Label Text="Welcome to Minute Math!" FontSize="36" VerticalOptions="CenterAndExpand" TextColor="Black"
               HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
-       <Image Source="startlogo" BackgroundColor="Violet"/>
-       <Button Text="Start" FontSize="64" TextColor="Yellow" HorizontalOptions="CenterAndExpand"
-               Command="{Binding LaunchGamePlayCommand}"/>
+       <Image Source="startlogo" BackgroundColor="{Binding ColorChoice}"/>
+       <Button Text="Start" FontSize="64" TextColor="Black" HorizontalOptions="CenterAndExpand"
+               Command="{Binding LaunchGamePlayCommand}"
+               BackgroundColor="{Binding ColorChoice}"/>
    </StackLayout>
 </ContentPage>
