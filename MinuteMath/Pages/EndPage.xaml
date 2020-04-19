@@ -30,6 +30,13 @@
                  <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
+            <Label Text="{Binding Score, StringFormat='Score:  {0}'}"
+               FontSize="24"
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3"              
+            />
+
             <Label  Text="{Binding HighScore, StringFormat='HighScore:  {0}'}"
                     FontSize="24"
                     Grid.Row="1"
@@ -40,24 +47,19 @@
             <Label Text="Game Over" 
                    TextColor="Crimson"
                    FontSize="36"
-                 
                    HorizontalOptions="CenterAndExpand"
-                   Grid.Row="2"
+                   Grid.Row="3"
                    Grid.RowSpan="2"
                     Grid.ColumnSpan="2"
                    Grid.Column="2"
             />
 
 
-            <Label Text="{Binding Score, StringFormat='Score:  {0}'}"
-               FontSize="24"
-                    Grid.Row="5"
-                    Grid.Column="1"
-                    Grid.ColumnSpan="3"              
-            />
+
 
             <Button Text="Play Again?"
-                    FontSize="24"
+                    FontSize="Title"
+                    HorizontalOptions="CenterAndExpand"
                     VerticalOptions="Center"
                     Command="{Binding LaunchGamePlayCommand}"
                     Grid.Row="6"
