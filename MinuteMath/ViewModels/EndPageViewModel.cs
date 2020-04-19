@@ -1,11 +1,30 @@
 using System.ComponentModel;
+using System.Windows.Input;
+using MinuteMath.Pages;
 using Xamarin.Essentials;
+using Xamarin.Forms;
 
 namespace MinuteMath.ViewModels
 {
     public class EndPageViewModel : INotifyPropertyChanged
     {
-                
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        
+        
+      
+        public Command LaunchGamePlayCommand { get; }
+
+        public EndPageViewModel()
+        {
+
+            LaunchGamePlayCommand = new Command(() =>
+            {
+                App.Current.MainPage = new NavigationPage(new GamePlay());
+            });
+        }
+
+
         public int HighScore
         {
             get => Preferences.Get(nameof(HighScore), 0);
@@ -21,7 +40,6 @@ namespace MinuteMath.ViewModels
             get => Preferences.Get(nameof(Score), 0);
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
     }
 }
     

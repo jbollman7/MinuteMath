@@ -58,7 +58,8 @@
 
             <Button Text="Play Again?"
                     FontSize="24"
-                    VerticalOptions="Center"   
+                    VerticalOptions="Center"
+                    Command="{Binding LaunchGamePlayCommand}"
                     Grid.Row="6"
                     Grid.Column="1"
                     Grid.ColumnSpan="3"/>
