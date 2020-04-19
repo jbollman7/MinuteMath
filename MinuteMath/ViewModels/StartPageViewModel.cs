@@ -9,14 +9,22 @@ namespace MinuteMath.ViewModels
 {
     public enum GetColor
     {
-        Red,
-        Orange,
-        Gold,
+        Aqua,
+        Aquamarine,
         Blue,
+        MediumSlateBlue,
+        LightCoral,
+        Coral,
+        CornflowerBlue,
+        Crimson,
+        ForrestGreen,
+        Gold,
         Green,
-        Violet,
+        Orange,
         Pink,
-        Plum
+        Plum,
+        Red,
+        Violet
     }
     public class StartPageViewModel : INotifyPropertyChanged
     {
@@ -33,16 +41,7 @@ namespace MinuteMath.ViewModels
         }
 
         public ICommand LaunchGamePlayCommand { get; }
-
-        /*
-        public GetColor ChooseBackgroundColor()
-        {
-            var colorValues = Enum.GetValues(typeof(GetColor));
-            var random = new Random();
-            var randomBackgroundColor = (GetColor)colorValues.GetValue(random.Next(colorValues.Length));
-            return randomBackgroundColor;
-        }
-        */
+        
         public string ChooseBackgroundColor()
         {
             var colorValues = Enum.GetValues(typeof(GetColor));
@@ -66,35 +65,7 @@ namespace MinuteMath.ViewModels
         public event PropertyChangedEventHandler PropertyChanged;
 
 
-        /*(
-        public void myColorChooser()
-         {
-             var rndColor = ChooseBackgroundColor();
-            switch (rndColor)
-            {
-                case GetColor.Red:
-                    ColorChoice = "Red";
-                    break;
-                case GetColor.Orange:
-                    ColorChoice = "Orange";
-                    break;
-                case GetColor.Gold:
-                    ColorChoice = "Gold";
-                    break;
-                case GetColor.Green:
-                    ColorChoice = "Green";
-                    break;
-                case GetColor.Blue:
-                    ColorChoice = "Blue";
-                    break;
-                case GetColor.Violet:
-                    ColorChoice = "Violet";
-                    break;
 
-            } //switch
-
-        } //method
-*/
 
     }
 }
