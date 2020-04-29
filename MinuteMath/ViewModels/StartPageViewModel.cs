@@ -17,7 +17,6 @@ namespace MinuteMath.ViewModels
         Coral,
         CornflowerBlue,
         Crimson,
-        ForrestGreen,
         Gold,
         Green,
         Orange,
