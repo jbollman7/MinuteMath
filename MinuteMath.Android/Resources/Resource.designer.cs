@@ -8351,13 +8351,19 @@ namespace MinuteMath.Droid
 			public const int notify_panel_notification_icon_bg = 2131165299;
 			
 			// aapt resource value: 0x7F070074
-			public const int startlogo = 2131165300;
+			public const int roundlogo = 2131165300;
 			
 			// aapt resource value: 0x7F070075
-			public const int tooltip_frame_dark = 2131165301;
+			public const int startlogo = 2131165301;
 			
 			// aapt resource value: 0x7F070076
-			public const int tooltip_frame_light = 2131165302;
+			public const int timerclear = 2131165302;
+			
+			// aapt resource value: 0x7F070077
+			public const int tooltip_frame_dark = 2131165303;
+			
+			// aapt resource value: 0x7F070078
+			public const int tooltip_frame_light = 2131165304;
 			
 			static Drawable()
 			{
@@ -9323,6 +9329,9 @@ namespace MinuteMath.Droid
 			
 			// aapt resource value: 0x7F0C0002
 			public const int launcher_foreground = 2131492866;
+			
+			// aapt resource value: 0x7F0C0003
+			public const int roundlogo = 2131492867;
 			
 			static Mipmap()
 			{
