@@ -6,6 +6,9 @@ using Xamarin.Essentials;
 using System.Diagnostics;
 using System;
 using MinuteMath.Pages;
+using System.Reflection;
+using System.IO;
+using Plugin.SimpleAudioPlayer;
 
 namespace MinuteMath.ViewModels
 {
@@ -18,6 +21,7 @@ namespace MinuteMath.ViewModels
         string _sGameTimer;
         int gameTimer = 59;
         string timer;
+       ISimpleAudioPlayer  player;
         
 
         public GameLogicViewModel()
@@ -30,6 +34,14 @@ namespace MinuteMath.ViewModels
 
 
             CalculateCommand = new Command<string>(EvaluateUserChoice);
+
+            var assembly = typeof(App).GetTypeInfo().Assembly;
+            
+            Stream audioStream = assembly.GetManifestResourceStream("MinuteMath.DingSound.wav");
+            
+            player = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.Current;
+
+            player.Load(audioStream);
 
         }
 
@@ -63,6 +75,7 @@ namespace MinuteMath.ViewModels
                 case "Red":
                     if (RedChoice == operators.ExpressionSolution)
                     {
+                        player.Play();
                         Score += 1;
                         initialize();
                         break;
@@ -75,6 +88,7 @@ namespace MinuteMath.ViewModels
                 case "Orange":
                     if (OrangeChoice == operators.ExpressionSolution)
                     {
+                        player.Play();
                         Score += 1;
                         initialize();
                         break;
@@ -87,6 +101,7 @@ namespace MinuteMath.ViewModels
                 case "Yellow":
                     if (YellowChoice == operators.ExpressionSolution)
                     {
+                        player.Play();
                         Score += 1;
                         initialize();
                         break;
@@ -99,6 +114,7 @@ namespace MinuteMath.ViewModels
                 case "Green":
                     if (GreenChoice == operators.ExpressionSolution)
                     {
+                        player.Play();
                         Score += 1;
                         initialize();
                         break;
@@ -111,6 +127,7 @@ namespace MinuteMath.ViewModels
                 case "Blue":
                     if (BlueChoice == operators.ExpressionSolution)
                     {
+                        player.Play();
                         Score += 1;
                         initialize();
                         break;
@@ -123,6 +140,7 @@ namespace MinuteMath.ViewModels
                 case "Indigo":
                     if (IndigoChoice == operators.ExpressionSolution)
                     {
+                        player.Play();
                         Score += 1;
                         initialize();
                         break;
