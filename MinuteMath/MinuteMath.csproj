@@ -11,6 +11,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="xam.plugin.simpleaudioplayer" Version="1.4.0" />
     <PackageReference Include="Xamarin.Forms" Version="4.5.0.356" />
     <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
   </ItemGroup>
@@ -18,5 +19,11 @@
     <Folder Include="ViewModels\" />
     <Folder Include="Pages\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="DingSound.wav" />
+    <EmbeddedResource Include="DingSound.wav" />
+    <None Remove="duck.wav" />
+    <EmbeddedResource Include="duck.wav" />
   </ItemGroup>
 </Project>
