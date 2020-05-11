@@ -23,5 +23,7 @@
   <ItemGroup>
     <None Remove="DingSound.wav" />
     <EmbeddedResource Include="DingSound.wav" />
+    <None Remove="duck.wav" />
+    <EmbeddedResource Include="duck.wav" />
   </ItemGroup>
 </Project>

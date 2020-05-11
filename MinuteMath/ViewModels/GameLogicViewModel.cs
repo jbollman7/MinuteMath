@@ -21,8 +21,9 @@ namespace MinuteMath.ViewModels
         string _sGameTimer;
         int gameTimer = 59;
         string timer;
-       ISimpleAudioPlayer  player;
-        
+        ISimpleAudioPlayer  correctDing;
+        ISimpleAudioPlayer incorrectQuack;
+
 
         public GameLogicViewModel()
         {
@@ -35,13 +36,19 @@ namespace MinuteMath.ViewModels
 
             CalculateCommand = new Command<string>(EvaluateUserChoice);
 
-            var assembly = typeof(App).GetTypeInfo().Assembly;
-            
-            Stream audioStream = assembly.GetManifestResourceStream("MinuteMath.DingSound.wav");
-            
-            player = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.Current;
+            var correctAssembly = typeof(App).GetTypeInfo().Assembly;
+            var inCorrectAssembly = typeof(App).GetTypeInfo().Assembly;
 
-            player.Load(audioStream);
+            Stream correctAudioStream = correctAssembly.GetManifestResourceStream("MinuteMath.DingSound.wav");
+            correctDing = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.CreateSimpleAudioPlayer();
+            correctDing.Load(correctAudioStream);
+
+            
+            Stream incorrectAudioStream = correctAssembly.GetManifestResourceStream("MinuteMath.duck.wav");
+            incorrectQuack = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.CreateSimpleAudioPlayer();
+            incorrectQuack.Load(incorrectAudioStream);
+            
+
 
         }
 
@@ -75,78 +82,84 @@ namespace MinuteMath.ViewModels
                 case "Red":
                     if (RedChoice == operators.ExpressionSolution)
                     {
-                        player.Play();
+                        correctDing.Play();
                         Score += 1;
                         initialize();
                         break;
                     }
                     else
                     {
-                        Score -= 1;
+                       incorrectQuack.Play();
+                         Score -= 1;
                         break;
                     }
                 case "Orange":
                     if (OrangeChoice == operators.ExpressionSolution)
                     {
-                        player.Play();
+                        correctDing.Play();
                         Score += 1;
                         initialize();
                         break;
                     }
                     else
                     {
+                        incorrectQuack.Play();
                         Score -= 1;
                         break;
                     }
                 case "Yellow":
                     if (YellowChoice == operators.ExpressionSolution)
                     {
-                        player.Play();
+                        correctDing.Play();
                         Score += 1;
                         initialize();
                         break;
                     }
                     else
                     {
+                        incorrectQuack.Play();
                         Score -= 1;
                         break;
                     }
                 case "Green":
                     if (GreenChoice == operators.ExpressionSolution)
                     {
-                        player.Play();
+                        correctDing.Play();
                         Score += 1;
                         initialize();
                         break;
                     }
                     else
                     {
+                        incorrectQuack.Play();
                         Score -= 1;
                         break;
                     }
                 case "Blue":
                     if (BlueChoice == operators.ExpressionSolution)
                     {
-                        player.Play();
+                        correctDing.Play();
                         Score += 1;
                         initialize();
                         break;
                     }
                     else
                     {
+                        incorrectQuack.Play();
                         Score -= 1;
                         break;
                     }
                 case "Indigo":
                     if (IndigoChoice == operators.ExpressionSolution)
                     {
-                        player.Play();
+                        correctDing.Play();
                         Score += 1;
                         initialize();
                         break;
                     }
                     else
                     {
+                        incorrectQuack.Play();
                         Score -= 1;
                         break;
                     }
