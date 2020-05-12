@@ -1,18 +1,19 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
+
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:MinuteMath.ViewModels"
              x:Class="MinuteMath.Pages.StartPage">
 
     <ContentPage.BindingContext>
-        <local:StartPageViewModel/>
+        <local:StartPageViewModel />
     </ContentPage.BindingContext>
-   <StackLayout BackgroundColor="{Binding ColorChoice}">
-       <Label Text="Minute Math" FontSize="36" VerticalOptions="CenterAndExpand" TextColor="Black"
-              HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
-       <Image Source="gamelogo" BackgroundColor="{Binding ColorChoice}"/>
-       <Button Text="Start" FontSize="64" TextColor="Black" HorizontalOptions="CenterAndExpand"
-               Command="{Binding LaunchGamePlayCommand}"
-               BackgroundColor="{Binding ColorChoice}"/>
-   </StackLayout>
+    <StackLayout BackgroundColor="{Binding ColorChoice}">
+        <Label Text="Minute Math" FontSize="36" VerticalOptions="CenterAndExpand" TextColor="Black"
+               HorizontalOptions="Center" HorizontalTextAlignment="Center" />
+        <Image Source="gamelogo" BackgroundColor="{Binding ColorChoice}" />
+        <Button Text="Start" FontSize="64" TextColor="Black" HorizontalOptions="CenterAndExpand"
+                Command="{Binding LaunchGamePlayCommand}"
+                BackgroundColor="{Binding ColorChoice}" />
+    </StackLayout>
 </ContentPage>

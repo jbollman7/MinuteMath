@@ -1,7 +1,5 @@
-﻿
-using MinuteMath.Pages;
+﻿using MinuteMath.Pages;
 using Xamarin.Forms;
-
 
 namespace MinuteMath
 {
