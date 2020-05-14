@@ -136,8 +136,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\startlogo.png" />
-    <BundleResource Include="Resources\timerclear.png" />
     <BundleResource Include="Resources\gamelogo.png" />
   </ItemGroup>
 </Project>
