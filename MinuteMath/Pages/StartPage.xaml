@@ -11,7 +11,8 @@
     <StackLayout BackgroundColor="{Binding ColorChoice}">
         <Label Text="Minute Math" FontSize="36" VerticalOptions="CenterAndExpand" TextColor="Black"
                HorizontalOptions="Center" HorizontalTextAlignment="Center" />
-        <Image Source="gamelogo" BackgroundColor="{Binding ColorChoice}" />
+        <Image Source="newStart" BackgroundColor="{Binding ColorChoice}"
+               HorizontalOptions="Center"/>
         <Button Text="Start" FontSize="64" TextColor="Black" HorizontalOptions="CenterAndExpand"
                 Command="{Binding LaunchGamePlayCommand}"
                 BackgroundColor="{Binding ColorChoice}" />
