@@ -22,26 +22,7 @@ namespace MinuteMath.ViewModels
         private int _blueChoice;
         private int _greenChoice;
         private int _indigoChoice;
-
         private int _orangeChoice;
-
-        /*
-        public List<int> DisplayChoices()     
-        {
-            get => shuffledUpChoices;
-            set
-            {
-                if (shuffledUpChoices != value)
-                   shuffledUpChoices = value;
-
-                var args = new PropertyChangedEventArgs(nameof(DisplayChoices)); //name of the method here.
-
-                PropertyChanged?.Invoke(this, args);        //? is sugar to check if its null
-            }
-        }
-        */
-
-
         private int _redChoice;
         private string _sGameTimer;
         private List<int> _shuffledUpChoices;

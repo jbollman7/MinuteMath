@@ -21,9 +21,9 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <None Remove="DingSound.wav" />
-    <EmbeddedResource Include="DingSound.wav" />
     <None Remove="duck.wav" />
     <EmbeddedResource Include="duck.wav" />
+    <None Remove="DingSound.wav" />
+    <EmbeddedResource Include="DingSound.wav" />
   </ItemGroup>
 </Project>

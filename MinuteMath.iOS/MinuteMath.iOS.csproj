@@ -137,5 +137,6 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\gamelogo.png" />
+    <BundleResource Include="Resources\newStart.png" />
   </ItemGroup>
 </Project>
