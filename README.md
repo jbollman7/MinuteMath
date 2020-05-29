@@ -3,6 +3,4 @@
 Xamaarin quiz app
 
 ![alt text](https://github.com/jbollman7/MinuteMath/blob/develop/promo-purple.png?raw=true)
-![alt text](http://url/to/img.png)
-
-https://github.com/jbollman7/MinuteMath/blob/develop/promo-purple.png
+![alt text](https://github.com/jbollman7/MinuteMath/blob/develop/1min-math-gameplay1.png?raw=true)
