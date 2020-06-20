@@ -136,7 +136,7 @@
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>
-    <AndroidResource Include="Resources\drawable\newStart.png">
+    <AndroidResource Include="Resources\drawable\newstart.png">
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>

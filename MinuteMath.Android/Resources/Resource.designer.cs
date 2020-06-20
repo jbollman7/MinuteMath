@@ -8318,7 +8318,7 @@ namespace MinuteMath.Droid
 			public const int navigation_empty_icon = 2131165288;
 			
 			// aapt resource value: 0x7F070069
-			public const int newStart = 2131165289;
+			public const int newstart = 2131165289;
 			
 			// aapt resource value: 0x7F07006A
 			public const int notification_action_background = 2131165290;
